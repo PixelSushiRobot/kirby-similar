@@ -288,9 +288,12 @@ class Similar
      *
      * @throws DuplicateException
      */
-    public function version()
+    public function version(): string
     {
-        return Kirby::plugin('texnixe/similar')->version()[0];
+        $plugin  = Kirby::plugin('texnixe/similar');
+        $version = $plugin?->version()[0] ?? null;
+
+        return $version ?? 'dev';
     }
 
     /**

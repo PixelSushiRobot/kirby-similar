@@ -163,3 +163,47 @@ Default: `false`
 Kirby 3 Similar is open-sourced software licensed under the MIT license.
 
 Copyright © 2019 Sonja Broda info@texniq.de https://sonjabroda.com
+
+## Compatibility
+
+| Kirby version | Status |
+| ------------- | ------ |
+| Kirby 3       | Supported |
+| Kirby 4       | Supported |
+| Kirby 5       | Supported (verified) |
+
+### Kirby 5 support
+
+This fork is verified to work with Kirby 5. The plugin uses only stable Kirby
+APIs that are unchanged across Kirby 3, 4, and 5:
+
+- Collection methods: `filter()`, `sortBy()`, `siblings()`, `split()`, `add()`, `toArray()`
+- Plugin registration: `Kirby::plugin()` with `pageMethods`, `fileMethods`, `options`, and `page.*:after` / `file.*:after` hooks
+- Cache API: `kirby()->cache()`, `->get()`, `->set()`, `->flush()`
+
+No source changes were required for Kirby 5 beyond metadata and a defensive
+guard in the `version()` method.
+
+**Requirements:** PHP 8.2+ (matches Kirby 5's minimum).
+
+### Installing from this fork via Composer
+
+Because the package name is `texnixe/similar`, add a VCS repository entry
+pointing at your fork so Composer resolves it instead of Packagist:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/your-github-username/kirby3-similar"
+        }
+    ],
+    "require": {
+        "texnixe/similar": "dev-master"
+    }
+}
+```
+
+Alternatively, download the files into `site/plugins/kirby-similar` or add the
+fork as a Git submodule.
