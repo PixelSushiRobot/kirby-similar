@@ -39,7 +39,6 @@ Jaccard Index: 2/3 = 0.66666
 
 While both pages have the same number of matches, the Jaccard Index is lower in the second example, because the number of unique tags is taken into account as well.
 
-
 ## Installation
 
 ### Download
@@ -47,6 +46,7 @@ While both pages have the same number of matches, the Jaccard Index is lower in 
 [Download the files](https://github.com/texnixe/kirby3-similar/archive/master.zip) and place them inside `site/plugins/kirby-similar`.
 
 ### Git Submodule
+
 You can add the plugin as a Git submodule.
 
     $ cd your/project/root
@@ -65,6 +65,7 @@ Run these commands to update the plugin:
 ## Usage
 
 ### Similar pages
+
 ```
 <?php
 
@@ -104,10 +105,12 @@ $similarPages = $page->similar([
 ]);
 ?>
 ```
+
 #### index
 
 The collection to search in.
 Default: `$item->siblings(false)` (The `false` argument excludes the current page from the collection)
+
 #### fields
 
 The name of the field to search in.
@@ -157,7 +160,6 @@ Default: `0.1`
 Filter similar items by language in a multi-language installation.
 Default: `false`
 
-
 ## License
 
 Kirby 3 Similar is open-sourced software licensed under the MIT license.
@@ -166,10 +168,10 @@ Copyright © 2019 Sonja Broda info@texniq.de https://sonjabroda.com
 
 ## Compatibility
 
-| Kirby version | Status |
-| ------------- | ------ |
-| Kirby 3       | Supported |
-| Kirby 4       | Supported |
+| Kirby version | Status               |
+| ------------- | -------------------- |
+| Kirby 3       | Supported            |
+| Kirby 4       | Supported            |
 | Kirby 5       | Supported (verified) |
 
 ### Kirby 5 support
@@ -193,15 +195,15 @@ pointing at your fork so Composer resolves it instead of Packagist:
 
 ```json
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/your-github-username/kirby3-similar"
-        }
-    ],
-    "require": {
-        "texnixe/similar": "dev-master"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/your-github-username/kirby3-similar"
     }
+  ],
+  "require": {
+    "texnixe/similar": "dev-master"
+  }
 }
 ```
 
